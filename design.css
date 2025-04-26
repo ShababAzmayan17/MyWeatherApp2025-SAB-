@@ -30,3 +30,53 @@ main {
   margin: auto;
   width: 90%;
 }
+
+.search-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 50px;
+  overflow: hidden;
+  background: white;
+  padding: 5px;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 6px 20px rgba(252, 123, 181, 0.2);
+  transform: translateY(-2px);
+}
+
+input {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  flex: 1;
+  border-radius: 40px;
+  outline: none;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  background: #fc7bb5;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(252, 123, 181, 0.4);
+}
+
+button:hover {
+  background: #ff65a3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(252, 123, 181, 0.6);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px rgba(252, 123, 181, 0.4);
+}
