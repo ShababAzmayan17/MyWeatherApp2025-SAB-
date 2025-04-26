@@ -172,3 +172,68 @@ button:active {
 .fade-in-card {
   animation: fadeInCard 0.7s ease-in-out forwards;
 }
+
+.error-message {
+  color: #ff3a5e;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+  background-color: rgba(255, 58, 94, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid #ff3a5e;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fc7bb5;
+  margin: 30px 0;
+  position: relative;
+}
+
+.loading::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid rgba(252, 123, 181, 0.3);
+  border-top-color: #fc7bb5;
+  animation: spinner 1s infinite linear;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+@keyframes spinner {
+  to { transform: rotate(360deg); }
+}
+
+
+@media (max-width: 600px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .search-bar {
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 10px;
+  }
+  
+  input, button {
+    width: 100%;
+  }
+}
+.weather-icon {
+  font-size: 2rem;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  animation: weatherIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes weatherIconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
