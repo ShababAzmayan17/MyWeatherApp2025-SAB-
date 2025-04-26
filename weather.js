@@ -54,6 +54,7 @@ function showError(message) {
   var result = document.getElementById('result');
   result.innerHTML = `<div class="error-message fade-in">${message}</div>`;
 }
+
 function getWeatherIcon(weatherCode) {
   const weatherIcons = {
     'Clear': '☀️',
@@ -69,6 +70,7 @@ function getWeatherIcon(weatherCode) {
   
   return weatherIcons[weatherCode] || weatherIcons.default;
 }
+
 function displayCountryWeather(country, capital, weather, result) {
   var card = document.createElement('div');
   card.className = 'card';
@@ -93,4 +95,45 @@ function displayCountryWeather(country, capital, weather, result) {
   setTimeout(() => {
     card.style.opacity = "1";
   }, 100);
+}
+
+function showDetails(name, flagUrl, population, subregion, languages) {
+  var existingDetails = document.getElementById('details-card');
+  if (existingDetails) {
+    existingDetails.classList.add('fade-out');
+    setTimeout(() => {
+      existingDetails.remove();
+      createDetailsCard();
+    }, 300);
+    } 
+    else if (existingDetails) {
+      existingDetails.remove();
+    }
+    else {
+    createDetailsCard();
+  }
+
+  function createDetailsCard() {
+  var result = document.getElementById('result');
+  var detailCard = document.createElement('div');
+  detailCard.className = 'card fade-in-card';
+  detailCard.id = 'details-card';
+  
+  detailCard.innerHTML = `
+    <div class="grid">
+      <img src="${flagUrl}" class="flag" alt="Flag of ${name}">
+      <div>
+        <p><strong>Population:</strong> ${population.toLocaleString()}</p>
+        <p><strong>Subregion:</strong> ${subregion}</p>
+        <p><strong>Languages:</strong> ${languages}</p>
+      </div>
+    </div>
+  `;
+  
+  result.appendChild(detailCard);
+
+  setTimeout(() => {
+    detailCard.style.opacity = "1";
+  }, 50);
+}
 }
