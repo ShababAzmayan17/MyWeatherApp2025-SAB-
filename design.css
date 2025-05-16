@@ -252,7 +252,7 @@ button:active {
 }
 
 .dark-mode header, .dark-mode footer {
-  background: linear-gradient(90deg, #d94f88 0%, #e56ea1 100%);
+  background: linear-gradient(90deg, #3e1828 0%, #2a0917 100%);
 }
 
 .theme-toggle {
@@ -309,7 +309,7 @@ button:active {
 
 .dark-mode .card {
   background: linear-gradient(to bottom right, #2a2a35, #353545);
-  border-top: 4px solid #d94f88;
+  border-top: 4px solid #2a0917;
 }
 
 .recent-searches {
@@ -374,11 +374,11 @@ button:active {
 }
 
 .dark-mode .weather-detail-value {
-  color: #ff9cc7;
+  color: #2a0917;
 }
 
 .dark-mode .card h2 {
-  color: #ff9cc7;
+  color: #2a0917;
   border-bottom: 2px dashed rgba(252, 123, 181, 0.2);
 }
 
