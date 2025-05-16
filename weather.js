@@ -326,3 +326,13 @@ function showDetails(name, flagUrl, population, subregion, languages) {
     }, 50);
   }
 }
+
+// Add animation to policy sections
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.policy-section');
+      sections.forEach(section => {
+        setTimeout(() => {
+          section.style.opacity = "1";
+        }, 100);
+      });
+    });
