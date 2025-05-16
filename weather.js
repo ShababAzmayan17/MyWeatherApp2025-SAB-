@@ -336,3 +336,64 @@ function showDetails(name, flagUrl, population, subregion, languages) {
         }, 100);
       });
     });
+
+// Add animation to about sections
+ // Add animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.about-section');
+      
+      function checkVisibility() {
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          
+          if (rect.top <= windowHeight * 0.8) {
+            section.classList.add('visible');
+          }
+        });
+      }
+      
+      // Initial check
+      checkVisibility();
+      
+      // Check on scroll
+      window.addEventListener('scroll', checkVisibility);
+      
+      // Animated counter
+      function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+        
+        function updateCount() {
+          start += increment;
+          if (start < target) {
+            element.textContent = Math.floor(start) + '+';
+            requestAnimationFrame(updateCount);
+          } else {
+            element.textContent = target + '+';
+          }
+        }
+        
+        updateCount();
+      }
+      
+      // Start animations when elements are visible
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (entry.target.id === 'countries-count') {
+              animateCounter(entry.target, 195);
+            } else if (entry.target.id === 'users-count') {
+              animateCounter(entry.target, 50);
+            } else if (entry.target.id === 'searches-count') {
+              animateCounter(entry.target, 1);
+            }
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      // Observe the counter elements
+      document.querySelectorAll('.stat-number').forEach(counter => {
+        observer.observe(counter);
+      });
+    });

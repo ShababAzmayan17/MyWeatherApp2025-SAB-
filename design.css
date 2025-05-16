@@ -566,3 +566,207 @@ footer p {
     .dark-mode .page-title {
       color: #ff9cc7;
     }
+
+/* about page design */
+.about-container {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 800px;
+      transition: all 0.3s ease;
+    }
+    
+    .dark-mode .about-container {
+      background: rgba(30, 30, 40, 0.8);
+    }
+    
+    .about-section {
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+    
+    .about-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .about-section h2 {
+      color: #fc7bb5;
+      border-bottom: 2px dashed rgba(252, 123, 181, 0.3);
+      padding-bottom: 10px;
+      margin-top: 30px;
+    }
+    
+    .dark-mode .about-section h2 {
+      color: #ff9cc7;
+      border-bottom: 2px dashed rgba(252, 123, 181, 0.2);
+    }
+    
+    .about-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .team-member {
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .dark-mode .team-member {
+      background: rgba(70, 70, 90, 0.5);
+    }
+    
+    .team-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #fc7bb5;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin: 0 auto 15px;
+      box-shadow: 0 4px 10px rgba(252, 123, 181, 0.3);
+    }
+    
+    .team-role {
+      font-size: 0.9rem;
+      color: #fc7bb5;
+      margin-top: 5px;
+    }
+    
+    .dark-mode .team-role {
+      color: #ff9cc7;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .feature-item {
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border-left: 4px solid #fc7bb5;
+    }
+    
+    .feature-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .dark-mode .feature-item {
+      background: rgba(70, 70, 90, 0.5);
+      border-left: 4px solid #ff9cc7;
+    }
+    
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    
+    .page-title {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 2rem;
+      color: #fc7bb5;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+      animation: titlePulse 2s infinite alternate;
+    }
+    
+    .dark-mode .page-title {
+      color: #ff9cc7;
+    }
+    
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 15px;
+      min-width: 120px;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fc7bb5;
+      margin-bottom: 5px;
+    }
+    
+    .dark-mode .stat-number {
+      color: #ff9cc7;
+    }
+    
+    .tech-logos {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+    
+    .tech-logo {
+      padding: 10px 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    
+    .tech-logo:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .dark-mode .tech-logo {
+      background: #2a2a35;
+    }
+    
+    @media (max-width: 600px) {
+      .team-grid, .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-container {
+        flex-direction: column;
+      }
+      
+      .about-container {
+        padding: 20px;
+      }
+    }
