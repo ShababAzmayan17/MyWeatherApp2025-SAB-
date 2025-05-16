@@ -397,3 +397,115 @@ function showDetails(name, flagUrl, population, subregion, languages) {
         observer.observe(counter);
       });
     });
+
+// add animation to contact sections
+// FAQ Accordion functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add animation to contact sections
+      const sections = document.querySelectorAll('.contact-section');
+      
+      function checkVisibility() {
+        sections.forEach((section, index) => {
+          const rect = section.getBoundingClientRect();
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          
+          if (rect.top <= windowHeight * 0.8) {
+            setTimeout(() => {
+              section.classList.add('visible');
+            }, index * 100);
+          }
+        });
+      }
+      
+      // Initial check
+      checkVisibility();
+      
+      // Check on scroll
+      window.addEventListener('scroll', checkVisibility);
+      
+      // FAQ accordion
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+          const answer = question.nextElementSibling;
+          const isOpen = question.classList.contains('active');
+          
+          // Close all FAQs
+          document.querySelectorAll('.faq-question').forEach(q => {
+            q.classList.remove('active');
+            q.nextElementSibling.style.maxHeight = '0';
+          });
+          
+          // Open the clicked one if it was closed
+          if (!isOpen) {
+            question.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+          }
+        });
+      });
+      
+      // Form submission handling
+      const contactForm = document.getElementById('contact-form');
+      const formStatus = document.getElementById('form-status');
+      
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Simulate form submission
+          formStatus.textContent = 'Sending...';
+          formStatus.className = 'form-status sending';
+          
+          // Simulate API call with timeout
+          setTimeout(() => {
+            formStatus.textContent = 'Message sent successfully! We\'ll get back to you soon.';
+            formStatus.className = 'form-status success';
+            contactForm.reset();
+          }, 1500);
+        });
+      }
+      
+      // Newsletter subscription
+      const newsletterSubmit = document.getElementById('newsletter-submit');
+      
+      if (newsletterSubmit) {
+        newsletterSubmit.addEventListener('click', function() {
+          const emailInput = document.getElementById('newsletter-email');
+          
+          if (emailInput.value && emailInput.checkValidity()) {
+            showNotification('Thanks for subscribing to our newsletter!');
+            emailInput.value = '';
+          } else {
+            showNotification('Please enter a valid email address', true);
+          }
+        });
+      }
+    });
+    
+    // Notification function (reusing from weather.js)
+    function showNotification(message, isError = false) {
+      // Create notification element
+      const notification = document.createElement('div');
+      notification.style.position = 'fixed';
+      notification.style.bottom = '20px';
+      notification.style.right = '20px';
+      notification.style.background = isError ? '#ff3a5e' : '#fc7bb5';
+      notification.style.color = 'white';
+      notification.style.padding = '10px 20px';
+      notification.style.borderRadius = '5px';
+      notification.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+      notification.style.zIndex = '1000';
+      notification.style.animation = 'slideUp 0.3s ease-out forwards';
+      notification.textContent = message;
+      
+      document.body.appendChild(notification);
+      
+      // Remove after 3 seconds
+      setTimeout(() => {
+        notification.style.animation = 'fadeIn 0.3s ease-out reverse forwards';
+        setTimeout(() => {
+          notification.remove();
+        }, 300);
+      }, 3000);
+    }

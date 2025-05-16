@@ -2,9 +2,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TNT Dynamix Weather App Contact Page</title>
+  <title>TNT Dynamix Weather App - Contact Us</title>
   <link rel="stylesheet" href="design.css">
-  <meta name="description" content="Find weather information for countries around the world">
+  <meta name="description" content="Get in touch with TNT Dynamix Weather App team for support, feedback, or inquiries.">
 </head>
 <body>
   <header>
@@ -12,7 +12,152 @@
     <button id="theme-toggle" class="theme-toggle">🌙</button>
   </header> 
   
-
+<main>
+    <h1 class="page-title">Contact Us</h1>
+    
+    <div class="contact-container">
+      <div class="contact-section" id="section1">
+        <h2>Get In Touch</h2>
+        <p>We'd love to hear from you! Whether you have a question about our features, need technical support, or want to partner with us, our team is ready to answer all your questions.</p>
+        
+        <div class="contact-grid">
+          <div class="contact-form-container">
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email address" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="support">Technical Support</option>
+                  <option value="feedback">Feature Feedback</option>
+                  <option value="bug">Report a Bug</option>
+                  <option value="partnership">Partnership Opportunity</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+              </div>
+              
+              <button type="submit" class="contact-submit">Send Message</button>
+            </form>
+            <div id="form-status" class="form-status"></div>
+          </div>
+          
+          <div class="contact-info-container">
+            <div class="contact-info-item">
+              <div class="contact-icon">📧</div>
+              <h3>Email Us</h3>
+              <p>support@tntweather.example</p>
+              <p>info@tntweather.example</p>
+            </div>
+            
+            <div class="contact-info-item">
+              <div class="contact-icon">⏱️</div>
+              <h3>Response Time</h3>
+              <p>We typically respond within 24-48 hours during business days.</p>
+            </div>
+            
+            <div class="contact-info-item">
+              <div class="contact-icon">🌐</div>
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-section" id="section2">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">How accurate is the weather data?</div>
+            <div class="faq-answer">
+              <p>Our weather data is sourced from OpenWeatherMap API, which provides accurate real-time weather information. The data is typically updated hourly and is as accurate as meteorological forecasting allows.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">Is the Country Weather App free to use?</div>
+            <div class="faq-answer">
+              <p>Yes! The TNT Dynamix Country Weather App is completely free to use. We believe weather information should be accessible to everyone without any cost barriers.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">How do I save my favorite countries?</div>
+            <div class="faq-answer">
+              <p>When viewing a country's weather information, simply click on the "Add to Favorites" button. Your favorites are saved locally on your device and can be accessed quickly for future reference.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">Can I use this app on my mobile device?</div>
+            <div class="faq-answer">
+              <p>Absolutely! Our app is built with responsive design principles, ensuring it works beautifully on desktop computers, tablets, and mobile phones.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">How can I request a new feature?</div>
+            <div class="faq-answer">
+              <p>We love hearing new ideas! Please use our contact form above and select "Feature Feedback" as the subject. Our team reviews all suggestions when planning future updates.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-section" id="section3">
+        <h2>Our Location</h2>
+        <div class="map-container">
+          <div class="map-placeholder">
+            <div class="map-text">TNT Dynamix Headquarters</div>
+          </div>
+          <div class="address-container">
+            <div class="address-item">
+              <h3>TNT Dynamix Headquarters</h3>
+              <p>123 Weather Tower</p>
+              <p>Digital Avenue</p>
+              <p>Tech City, TC 10101</p>
+              <p>Global Innovation Hub</p>
+            </div>
+            <div class="address-item">
+              <h3>Office Hours</h3>
+              <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+              <p>Saturday: 10:00 AM - 2:00 PM</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-section" id="section4">
+        <h2>Join Our Newsletter</h2>
+        <p>Subscribe to receive updates about new features, weather insights, and tips for using our app.</p>
+        <div class="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Your email address">
+          <button id="newsletter-submit">Subscribe</button>
+        </div>
+        <p class="newsletter-disclaimer">We respect your privacy and will never share your information. You can unsubscribe at any time.</p>
+      </div>
+    </div>
+  </main>
 
   <footer>
     <p>© 2025 Country Weather App. All rights reserved.<br> Done by TNT Dynamix</p>
