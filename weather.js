@@ -1,3 +1,4 @@
+
 // Store recent searches and favorites
 let recentSearches = [];
 let favorites = [];
@@ -97,6 +98,9 @@ function searchCountry() {
   
   // Add to recent searches
   addToRecentSearches(countryName);
+  
+  // Clear the search input field after initiating the search
+  document.getElementById('countryInput').value = '';
   
   var API_KEY = "aff6cae3afff3956755af2384edf980a";
   
