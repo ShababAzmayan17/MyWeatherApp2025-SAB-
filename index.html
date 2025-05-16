@@ -4,19 +4,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TNT Dynamix Weather App</title>
   <link rel="stylesheet" href="design.css">
+  <meta name="description" content="Find weather information for countries around the world">
 </head>
 <body>
-  <header><h1>TNT Dynamix <br> Country Weather App</h1></header> 
+  <header>
+    <h1>TNT Dynamix <br> Country Weather App</h1>
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+  </header> 
   
   <main>
-    <div class="search-bar">
-      <input id="countryInput" placeholder="Enter country name...">
-      <button id="enterBtn" onclick="searchCountry()">Search</button>
-    </div>
-    <div id="result"></div>
-  </main>
+        <div class="app-container">
+            <div class="search-bar">
+                <input id="countryInput" placeholder="Enter country name..." autocomplete="off">
+                <button onclick="searchCountry()">Search</button>
+            </div>
+            
+            <div id="recent-searches" class="recent-searches"></div>
+            
+            <div id="result"></div>
+        </div>
+    </main>
 
-  <footer>© 2025 Country Weather App. All rights reserved.<br> Done by TNT Dynamix</footer>
+
+  <footer>
+    <p>© 2025 Country Weather App. All rights reserved.<br> Done by TNT Dynamix</p>
+    <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+  </footer>
   
   <script src="weather.js"></script>
 </body>
