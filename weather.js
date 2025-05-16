@@ -337,6 +337,57 @@ function showDetails(name, flagUrl, population, subregion, languages) {
       });
     });
 
+ // Dark mode functionality for about page
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Check if dark mode was previously enabled
+    if(localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';
+    }
+
+    // Toggle dark mode
+    themeToggle.addEventListener('click', function() {
+        if(document.body.classList.contains('dark-mode')) {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+            themeToggle.textContent = '🌙';
+        } else {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+            themeToggle.textContent = '☀️';
+        }
+    });
+
+    // Animation for about page sections
+    const aboutSections = document.querySelectorAll('.about-section');
+    
+    // Function to check if an element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+        );
+    }
+    
+    // Function to handle scroll animation
+    function handleScroll() {
+        aboutSections.forEach(section => {
+            if (isInViewport(section)) {
+                section.classList.add('visible');
+            }
+        });
+    }
+    
+    // Initial check on page load
+    handleScroll();
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', handleScroll);
+});
+
 // Add animation to about sections
  // Add animation on scroll
     document.addEventListener('DOMContentLoaded', function() {
@@ -397,6 +448,57 @@ function showDetails(name, flagUrl, population, subregion, languages) {
         observer.observe(counter);
       });
     });
+
+// Dark mode functionality for about page
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Check if dark mode was previously enabled
+    if(localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';
+    }
+
+    // Toggle dark mode
+    themeToggle.addEventListener('click', function() {
+        if(document.body.classList.contains('dark-mode')) {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+            themeToggle.textContent = '🌙';
+        } else {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+            themeToggle.textContent = '☀️';
+        }
+    });
+
+    // Animation for about page sections
+    const aboutSections = document.querySelectorAll('.about-section');
+    
+    // Function to check if an element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+        );
+    }
+    
+    // Function to handle scroll animation
+    function handleScroll() {
+        aboutSections.forEach(section => {
+            if (isInViewport(section)) {
+                section.classList.add('visible');
+            }
+        });
+    }
+    
+    // Initial check on page load
+    handleScroll();
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', handleScroll);
+});
 
 // add animation to contact sections
 // FAQ Accordion functionality
@@ -509,3 +611,54 @@ function showDetails(name, flagUrl, population, subregion, languages) {
         }, 300);
       }, 3000);
     }
+  
+// Dark mode functionality for about page
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Check if dark mode was previously enabled
+    if(localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';
+    }
+
+    // Toggle dark mode
+    themeToggle.addEventListener('click', function() {
+        if(document.body.classList.contains('dark-mode')) {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+            themeToggle.textContent = '🌙';
+        } else {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+            themeToggle.textContent = '☀️';
+        }
+    });
+
+    // Animation for about page sections
+    const aboutSections = document.querySelectorAll('.about-section');
+    
+    // Function to check if an element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+        );
+    }
+    
+    // Function to handle scroll animation
+    function handleScroll() {
+        aboutSections.forEach(section => {
+            if (isInViewport(section)) {
+                section.classList.add('visible');
+            }
+        });
+    }
+    
+    // Initial check on page load
+    handleScroll();
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', handleScroll);
+});
