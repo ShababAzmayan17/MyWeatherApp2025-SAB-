@@ -255,6 +255,26 @@ button:active {
   background: linear-gradient(90deg, #3e1828 0%, #2a0917 100%);
 }
 
+.dark-mode .search-bar {
+  background: #2a2a35;
+}
+
+.dark-mode input {
+  color: white;
+}
+
+.dark-mode input::placeholder {
+  color: #aaa;
+}
+
+.dark-mode button {
+  background: #3e1828;
+}
+
+.dark-mode button:hover {
+  background: #2a0917;
+}
+
 .theme-toggle {
   position: absolute;
   right: 20px;
