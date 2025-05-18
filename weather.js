@@ -1,4 +1,3 @@
-
 // Store recent searches and favorites
 let recentSearches = [];
 let favorites = [];
